@@ -3,7 +3,7 @@
 This Coil QA testing process has been devised to monitor the integrity and performance of RF coils  used for MRI. It provides a snapshot of the coil performance at the time of testing, which can be used as a reference data-point of the coil's 'health' at any given time, or longitudinally when tests are run on a regular basis, e.g. yearly.
 
 
-### Primary method: *element-wise SNR*
+## Primary method: *element-wise SNR*
 The test calculates the SNR from each of the active elements that constitute the RF coil. The SNR value is obtained as the ratio between the average intensity of the 5% brightest and darkest voxels (excluding zeros) in the image. Compared to a multi-element image based analysis, this method has the following benefits and drawbacks:
 
  **Benefits**:
@@ -26,33 +26,18 @@ The test calculates the SNR from each of the active elements that constitute the
 
 
 
-
-
-
-
-
 ---
 
-
-
-
-
-
-
-
-
-
-### Current implementation of the Element-wise SNR using Python:
-
-### What the script does:: 
+## Current implementation of the Element-wise SNR using Python:
+## What the script does: 
    - Calculates the Signal-to-Noise Ratio (SNR) of each element in the RF Coil.
    - Generates a report with the results of the tests.
    - Creates (or updates) an entry with the test results to a SQLite database for future reference.
 
-#### Input:
+### Input:
    - Directory containing the DICOM files with the Customer Service QA data. 
 
-#### Output:
+### Output:
    - A report in PDF format summarising the analysis.
    - An SQLite database storing the results.
    - (Additional outputs used in PDF the report: 
@@ -60,7 +45,7 @@ The test calculates the SNR from each of the active elements that constitute the
      - A CSV file containing a summary of the results.
      - A bar chart visualising the SNR per coil element.)
 
-#### Execution:
+### Execution:
  - Use the command-line interface to call the script and specify the path to the data folder and, optionally, the output folder e.g.:  
  
  ```python ServiceQA_analysis.py /CoilTests/H64CH_CustomerQA_07Sep2023 --out_folder <results_folder>```
@@ -71,11 +56,13 @@ The test calculates the SNR from each of the active elements that constitute the
 
 ### Dependencies:
    - Libraries: argparse, pathlib, os, pydicom, numpy, pandas, matplotlib, fpdf, PIL, sqlite3.
+![](report.png)
 
-     ![\report.png]
+
+   ![](collage.jpg)  
 
 ---
-### Script structure:
+## Script structure:
 
 
    a. **DICOM File Analysis**:
@@ -110,6 +97,7 @@ The test calculates the SNR from each of the active elements that constitute the
 ***Notes***:
    - The SQLite database is a lightweight solution for storing and querying results. Make regular backups.
    - The default threshold for highlighting SNRs in the bar chart is set to 50 but can be adjusted as per requirements.
+
 
 
 
