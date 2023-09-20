@@ -56,10 +56,18 @@ The test calculates the SNR from each of the active elements that constitute the
 
 ### Dependencies:
    - Libraries: argparse, pathlib, os, pydicom, numpy, pandas, matplotlib, fpdf, PIL, sqlite3.
+     
+     
+
+
+
+---
+***Example report:***
 ![](report.png)
 
 
-   ![](collage.jpg)  
+
+![](collage.jpg)  
 
 ---
 ## Script structure:
