@@ -102,6 +102,8 @@ The test calculates the SNR from each of the active elements that constitute the
         - If no match is found, insert the new record.
       - If the table doesn't exist, create it and populate it with data from the CSV.
 
+![](table.png)
+
 ***Notes***:
    - The SQLite database is a lightweight solution for storing and querying results. Make regular backups.
    - The default threshold for highlighting SNRs in the bar chart is set to 50 but can be adjusted as per requirements.
